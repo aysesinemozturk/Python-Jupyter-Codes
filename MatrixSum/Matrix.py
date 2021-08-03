@@ -62,7 +62,19 @@ class Matrix:
             
             print('|')
 
-    
+    #if we want to make our report method accessible from only in this class, we should use __
+    def __PrivateReport(self):
+
+            for i in range(self.numberOfRows):
+                print('|', end='')
+
+                for j in range(self.numberOfColumns):
+                    print(self.values[i][j], end='')
+                    print(',', end='')
+                
+                print('|')
+    #However, we are not going to use this function this time.
+
 
 
 
