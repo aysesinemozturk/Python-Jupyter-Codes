@@ -94,10 +94,20 @@ class Matrix:
         tempMatrix = Matrix(title, ws.max_row, ws.max_column, values)
         return tempMatrix
 
+    def saveMatrixInExcelFile(self):
 
+        #create workbook, excel file
+        wb = Workbook()
+        #activate workbook
+        ws = wb.active
+        ws.title = "Matrix " + self.title
 
-
-
+        for i in range(self.numberOfRows):
+            for j in range(self.numberOfColumns):
+                
+                ws.cell(i+1,j+1).value = self.values[i][j]
+        
+        wb.save(filename = self.title + '.xlsx') #save our workbook
 
 
 
