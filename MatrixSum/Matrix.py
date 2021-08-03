@@ -15,9 +15,10 @@ class Matrix:
     # If vectorvalues length is same as our matrix's dimension, it will take it as values.
     # Otherwise, values of the matrix remains as zero, null.
 
-    def __init__(self, NumberOfRows, NumberOfColumns, VectorValues = None):
+    def __init__(self, title, NumberOfRows, NumberOfColumns, VectorValues = None):
         self.numberOfRows = NumberOfRows
         self.numberOfColumns = NumberOfColumns
+        self.title = title
 
         if(VectorValues == None):
             self.values = [[0 for y in range(self.numberOfColumns)] for x in range(self.numberOfRows)]
@@ -39,7 +40,7 @@ class Matrix:
         #if size of two matrixes are equal to each other, summation is possible.
         if(self.numberOfRows == matrix.numberOfRows and self.numberOfColumns == matrix.numberOfColumns):
 
-            resultMatrix = Matrix(self.numberOfRows,self.numberOfColumns)
+            resultMatrix = Matrix("Result Matrix",self.numberOfRows,self.numberOfColumns)
 
             for i in range(self.numberOfRows):
                 for j in range(self.numberOfColumns):
@@ -60,6 +61,8 @@ class Matrix:
                 print(',', end='')
             
             print('|')
+
+    
 
 
 
