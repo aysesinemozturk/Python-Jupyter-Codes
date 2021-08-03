@@ -75,6 +75,28 @@ class Matrix:
                 print('|')
     #However, we are not going to use this function this time.
 
+    # we should use statis method in order to use following method without creating object
+    @staticmethod
+    def createMatrixUsingExcelFiles(ExcelFileName, title):
+
+        #access existing workbook which means existing excel files
+        wb_obj = openpyxl.load_workbook(filename = ExcelFileName, data_only = True)
+        #it is for activating workbook
+        ws = wb_obj.active
+
+        #now it is time to assign data values in excel files to empty array, then temp matrix
+        values = []
+        for i in range (ws.max_column):
+            for j in range(ws.max_row):
+                values.append(ws.cell(j+1,i+1).value) #ws.cell starts with 1 and range starts with zero/ 
+                                                      #ws.cell().value gives us access to cell's value.
+
+        tempMatrix = Matrix(title, ws.max_row, ws.max_column, values)
+        return tempMatrix
+
+
+
+
 
 
 
