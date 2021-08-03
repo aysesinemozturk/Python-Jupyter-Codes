@@ -4,6 +4,9 @@ roomCount = 1
 aviableDays = 30
 occupanyRate = 0.6
 
+print(f"Room Price is {roomPrice} ")
+
+
 cleaningFee = 50
 unitBill = 5
 
